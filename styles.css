@@ -62,3 +62,72 @@ nav{
   .carousel-control-next-icon {
     transform: translateX(-800%);
   }
+
+
+
+/* For screens wider than 768px */
+/* @media only screen and (min-width: 768px) {
+  .carousel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    display: flex;
+    width: calc((100% / 3) - 20px);
+    margin-right: 20px;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .carousel-slide:last-of-type {
+    margin-right: 0;
+  }
+
+  .prev,
+  .next {
+    display: none;
+  }
+} */
+
+/* For screens up to 768px */
+@media only screen and (max-width: 768px) {
+  .carousel {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .carousel-slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+
+  .carousel-slide.active {
+    opacity: 1;
+  }
+
+  .prev,
+  .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    padding: 10px;
+    cursor: pointer;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+}
